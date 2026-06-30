@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Primesys Report</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7fb;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333333;
+        }
+
+        .email-wrapper {
+            max-width: 700px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #015958, #008F8C);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header img {
+            max-height: 80px;
+            margin-bottom: 15px;
+        }
+
+        .header h1 {
+            color: white;
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .content {
+            padding: 35px;
+            line-height: 1.7;
+        }
+
+        .greeting {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .report-card {
+            background: #f8fbfc;
+            border-left: 5px solid #008F8C;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 6px;
+        }
+
+        .report-card table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .report-card td {
+            padding: 10px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #015958;
+            width: 35%;
+        }
+
+        .attachment-box {
+            background: #eefaf9;
+            border: 1px solid #b7ebe7;
+            padding: 18px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .footer {
+            background: #023535;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .highlight {
+            color: #008F8C;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="email-wrapper">
+
+    <div class="header">
+        <img src="cid:logoImage" alt="Primesys Logo">
+        <h1>Device Report Notification</h1>
+    </div>
+
+    <div class="content">
+
+        <div class="greeting">
+            Hello <strong th:text="${divisionName}">Division Name</strong>,
+        </div>
+
+        <p>
+            Thank you for using <span class="highlight">Primesys Track Monitoring System</span>.
+            Your requested report has been successfully generated.
+        </p>
+
+        <div class="report-card">
+            <table>
+                <tr>
+                    <td class="label">Report Name</td>
+                    <td th:text="${reportName}"> Report</td>
+                </tr>
+
+                <tr>
+                    <td class="label">Generated On</td>
+                    <td th:text="${generatedDate}"></td>
+                </tr>
+
+                <tr>
+                    <td class="label">Division</td>
+                    <td th:text="${divisionName}"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="attachment-box">
+            📄 The report has been attached with this email for your review.
+            Please download the attachment and verify the report details.
+        </div>
+
+        <p>
+            If you encounter any issues or require assistance regarding the report,
+            please contact the Primesys Support Team.
+        </p>
+
+        <br>
+
+        <p>
+            Regards,<br>
+            <strong>Primesys Support Team</strong>
+        </p>
+
+    </div>
+
+    <div class="footer">
+        © 2026 Primesys Technologies<br>
+        This is an automated email. Please do not reply directly to this message.
+    </div>
+
+</div>
+
+</body>
+</html>
